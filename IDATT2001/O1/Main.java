@@ -32,7 +32,7 @@ public class Main {
         // Uttrykk med anyMatch som sier om spar dame finnes i lista
         boolean spadeQueen = cards.stream().anyMatch(p-> (p.getSUIT()=='S') && p.getFACE()==12);
 
-        // Uttrykk som sier om lista er en poker-flush, dvs. har fem kort hvor alle har samme kortfarge
+        // Uttrykk som sier om lista er en poker-flush, dvs. har fem kort hvor alle har samme kortfarge(type: S, H, D, C)
         Map<Character, Long> color = cards.stream().collect(Collectors.groupingBy(Card::getSUIT, Collectors.counting()));
         boolean flush = color.values().stream().anyMatch(p -> p>=5);
 
